@@ -1,14 +1,6 @@
 import { useTitle } from 'hooks'
-import {
-  HR,
-  // Ribbon,
-  Page,
-  PageContainer,
-  Waves
-} from 'components'
+import { HR, Page, PageContainer, Waves } from 'components'
 
-// import { UncontrolledSelectTimeZoneDemo } from 'components/form/SelectTimeZone/UncontrolledSelectTimeZoneDemo'
-import { UncontrolledDropzoneDemo } from 'components/form/Dropzone/UncontrolledDropzoneDemo'
 /* ========================================================================
                                 PageHome
 ======================================================================== */
@@ -53,8 +45,6 @@ const PageHome = () => {
         </h1>
 
         <HR style={{ marginBottom: 50 }} />
-        {/* <UncontrolledSelectTimeZoneDemo /> */}
-        <UncontrolledDropzoneDemo />
 
         {/* <PaginatedListDemo /> */}
 
