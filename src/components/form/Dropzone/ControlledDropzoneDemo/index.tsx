@@ -296,7 +296,7 @@ export const ControlledDropzoneDemo = () => {
 
         {/* =====================
            Submit Button
-      ===================== */}
+        ===================== */}
 
         {isSubmitting ? (
           <button

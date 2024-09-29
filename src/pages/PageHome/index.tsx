@@ -1,5 +1,7 @@
 import { useTitle } from 'hooks'
 import { HR, Page, PageContainer, Waves } from 'components'
+import { InputTagsDemo } from 'components/form/InputTags/InputTagsDemo'
+// import { SplitterDemo } from './experiments/Splitter/SplitterDemo'
 
 /* ========================================================================
                                 PageHome
@@ -32,7 +34,7 @@ const PageHome = () => {
               height: '100%'
             }}
           >
-            Home
+            Demo
           </span>
           <span
             className='bg-gradient-to-r from-violet-700 to-sky-400 bg-clip-text text-transparent'
@@ -40,11 +42,15 @@ const PageHome = () => {
               position: 'relative'
             }}
           >
-            Home
+            Demo
           </span>
         </h1>
 
         <HR style={{ marginBottom: 50 }} />
+
+        {/* <SplitterDemo /> */}
+
+        <InputTagsDemo />
 
         {/* <PaginatedListDemo /> */}
 

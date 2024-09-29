@@ -1369,6 +1369,28 @@ export const formPlugin = plugin(function (pluginApi) {
     '.was-validated .input-group > .form-control:not(:focus):invalid, .input-group > .form-control:not(:focus).is-invalid, .was-validated .input-group > .form-select:not(:focus):invalid, .input-group > .form-select:not(:focus).is-invalid, .was-validated .input-group > .form-floating:not(:focus-within):invalid, .input-group > .form-floating:not(:focus-within).is-invalid':
       {
         zIndex: '4'
-      }
+      },
+
+    /* ======================
+         helper classes
+    ====================== */
+
+    '.focus-within:focus-within': {
+      color: 'var(--form-color)',
+      backgroundColor: 'var(--form-bg)',
+      borderColor: 'var(--form-focus-border-color)',
+      outline: '0',
+      boxShadow: '0 0 0 0.25rem rgba(var(--form-focus-shadow-rgb), 0.25)'
+    },
+
+    '.focus-within-valid:focus-within': {
+      borderColor: 'var(--form-valid-border-color)',
+      boxShadow: '0 0 0 0.25rem rgba(var(--form-valid-rgb), 0.25)'
+    },
+
+    '.focus-within-invalid:focus-within': {
+      borderColor: 'var(--form-invalid-border-color)',
+      boxShadow: '0 0 0 0.25rem rgba(var(--form-invalid-rgb), 0.25)'
+    }
   })
 })

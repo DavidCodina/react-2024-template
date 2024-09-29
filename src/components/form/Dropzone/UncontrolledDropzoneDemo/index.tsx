@@ -72,9 +72,6 @@ export const UncontrolledDropzoneDemo = () => {
     resolver: zodResolver(schema)
   })
 
-  //! const values = getValues()
-  //! console.log('\nfiles:', values.files)
-
   /* ======================
         onSubmit()
   ====================== */
