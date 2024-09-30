@@ -135,8 +135,8 @@ export const InputTags = forwardRef<HTMLInputElement, Props>(
     }
 
     /* ======================
-        handleKeyDown()
-  ====================== */
+          handleKeyDown()
+    ====================== */
 
     const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
       if (disabled) {

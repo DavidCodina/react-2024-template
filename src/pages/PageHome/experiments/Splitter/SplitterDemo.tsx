@@ -57,7 +57,7 @@ export const SplitterDemo = () => {
     </>
   )
   return (
-    <Splitter className='mb-6 flex aspect-[2/1] rounded-lg border border-neutral-300 bg-white shadow-[rgba(0,_0,_0,_0.2)_0px_60px_40px_-7px]'>
+    <Splitter className='mb-6 flex aspect-[3/1] rounded-lg border border-neutral-300 bg-white shadow-[rgba(0,_0,_0,_0.2)_0px_60px_40px_-7px]'>
       {myPanels}
     </Splitter>
   )

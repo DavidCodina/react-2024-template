@@ -1,20 +1,7 @@
-import {
-  ComponentProps,
-  useState,
-  ReactNode,
-  useEffect,
-  useRef,
-  Children,
-  isValidElement,
-  Fragment
-} from 'react'
-
-// type SplitterProps = {
-//   children: [ReactNode, ReactNode]
-// } & Omit<ComponentProps<'div'>, 'children'>
+import { ComponentProps, useState, useEffect, useRef } from 'react'
+import { useExtractValidChildren } from './useExtractValidChildren'
 
 type SplitterProps = ComponentProps<'div'>
-
 type SplitterPanelProps = ComponentProps<'div'>
 
 /* ========================================================================
@@ -31,21 +18,7 @@ export const Splitter = ({
   const splitterRef = useRef<HTMLDivElement>(null)
   const isDraggingRef = useRef(false)
   const [isMouseDown, setIsMouseDown] = useState(false)
-
-  // Function to recursively extract valid children
-  const extractValidChildren = (children: ReactNode): ReactNode[] => {
-    return Children.toArray(children).reduce((acc: ReactNode[], child) => {
-      if (isValidElement(child)) {
-        if (child.type === Fragment) {
-          return [...acc, ...extractValidChildren(child.props.children)]
-        }
-        return [...acc, child]
-      }
-      return acc
-    }, [])
-  }
-
-  const validChildren = extractValidChildren(children).slice(0, 2)
+  const validChildren = useExtractValidChildren({ children })
 
   /* ======================
         useEffect()
@@ -112,15 +85,16 @@ export const Splitter = ({
     const xMixin =
       sizes[1] <= 3 ? '-translate-x-full transition-transform duration-200' : ''
     return (
-      <div // eslint-disable-line
-        //^ Review the eslint issue above.
+      <div
         {...otherProps}
-        style={{ flexShrink: 0 }}
         onMouseDown={() => {
           setIsMouseDown(true)
           isDraggingRef.current = true
         }}
         className={`relative my-6 flex w-1 cursor-col-resize`}
+        role='button'
+        style={{ flexShrink: 0 }}
+        tabIndex={0}
       >
         <div
           className={`

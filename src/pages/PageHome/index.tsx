@@ -1,8 +1,9 @@
 import { useTitle } from 'hooks'
 import { HR, Page, PageContainer, Waves } from 'components'
-import { InputTagsDemo } from 'components/form/InputTags/InputTagsDemo'
-// import { SplitterDemo } from './experiments/Splitter/SplitterDemo'
 
+import { SplitterDemo } from './experiments/Splitter/SplitterDemo'
+
+import { ReactResizablePanelsDemo } from './experiments/ReactResizablePanels'
 /* ========================================================================
                                 PageHome
 ======================================================================== */
@@ -34,7 +35,7 @@ const PageHome = () => {
               height: '100%'
             }}
           >
-            Demo
+            Home
           </span>
           <span
             className='bg-gradient-to-r from-violet-700 to-sky-400 bg-clip-text text-transparent'
@@ -42,15 +43,15 @@ const PageHome = () => {
               position: 'relative'
             }}
           >
-            Demo
+            Home
           </span>
         </h1>
 
         <HR style={{ marginBottom: 50 }} />
 
-        {/* <SplitterDemo /> */}
+        <ReactResizablePanelsDemo />
 
-        <InputTagsDemo />
+        {/* <SplitterDemo /> */}
 
         {/* <PaginatedListDemo /> */}
 

@@ -110,7 +110,7 @@ export const InputTagsDemo = () => {
           size='sm'
           tagClassName='bg-neutral-50 data-[highlighted]:bg-blue-50'
           // touched={true}
-          // error={'Your tags fucking suck!'}
+          // error={'Your tags suck!'}
         />
 
         {/* =====================
