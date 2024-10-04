@@ -1,6 +1,8 @@
+// @ts-nocheck
+
 import { useTitle } from 'hooks'
 import { HR, Page, PageContainer, Waves } from 'components'
-
+import { PaginatedListDemo } from './experiments/PaginatedListDemo'
 /* ========================================================================
                                 PageHome
 ======================================================================== */
@@ -45,6 +47,8 @@ const PageHome = () => {
         </h1>
 
         <HR style={{ marginBottom: 50 }} />
+
+        <PaginatedListDemo />
 
         {/* <SplitterDemo /> */}
 
