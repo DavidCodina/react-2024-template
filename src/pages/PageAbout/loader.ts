@@ -25,7 +25,7 @@ export const LazyPageAbout = lazyWithPreload(() => {
 })
 
 export const loader = async () => {
-  await sleep(3000)
+  //^ await sleep(3000)
   await LazyPageAbout.preload().then((component: any) => {
     return component
   })

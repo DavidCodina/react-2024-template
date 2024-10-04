@@ -1,9 +1,6 @@
 import { useTitle } from 'hooks'
 import { HR, Page, PageContainer, Waves } from 'components'
 
-import { SplitterDemo } from './experiments/Splitter/SplitterDemo'
-
-import { ReactResizablePanelsDemo } from './experiments/ReactResizablePanels'
 /* ========================================================================
                                 PageHome
 ======================================================================== */
@@ -48,8 +45,6 @@ const PageHome = () => {
         </h1>
 
         <HR style={{ marginBottom: 50 }} />
-
-        <ReactResizablePanelsDemo />
 
         {/* <SplitterDemo /> */}
 

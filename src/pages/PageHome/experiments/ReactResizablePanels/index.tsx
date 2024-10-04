@@ -19,35 +19,12 @@ const lipsum = (
   </div>
 )
 
-const gripVertical = (
-  <svg
-    xmlns='http://www.w3.org/2000/svg'
-    width='32'
-    height='32'
-    fill='currentColor'
-    viewBox='0 0 16 16'
-  >
-    <path d='M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0' />
-  </svg>
-)
-
-const gripHorizontal = (
-  <svg
-    xmlns='http://www.w3.org/2000/svg'
-    width='32'
-    height='32'
-    fill='currentColor'
-    viewBox='0 0 16 16'
-  >
-    <path d='M2 8a1 1 0 1 1 0 2 1 1 0 0 1 0-2m0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2m3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2m0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2m3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2m0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2m3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2m0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2m3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2m0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2' />
-  </svg>
-)
-
 /* ========================================================================
     
 ======================================================================== */
 // For more examples, see here: https://react-resizable-panels.vercel.app/
 // Also see shadcn/ui, which uses this package: https://ui.shadcn.com/docs/components/resizable
+
 export const ReactResizablePanelsDemo = ({ direction = 'horizontal' }: any) => {
   /* ======================
           return
@@ -67,12 +44,13 @@ export const ReactResizablePanelsDemo = ({ direction = 'horizontal' }: any) => {
         <Panel
           // react-resizable-panels hardcodes overflow:hidden on the style attribute.
           // This means you need to match it within style={{ overflowY: 'auto' }}, or
-          // use '!overflow-y-auto'
+          // use '!overflow-auto'. But actually the better solution is to instead
+          // put this directly on the content: 'h-full overflow-auto'
           defaultSize={25}
-          style={{ overflowY: 'auto' }}
+          //^ style={{ overflowY: 'auto' }}
         >
           <div
-            className='p-4'
+            className='h-full overflow-auto p-4'
             // If you set minWidth on the content, it will prevent it from being squished,
             // but still allow the panel to close completely. Conversely, if you set minSize
             // on the panel, it will prevent it from closing beyong that percentage.
@@ -89,11 +67,11 @@ export const ReactResizablePanelsDemo = ({ direction = 'horizontal' }: any) => {
         <CustomResizeHandle direction={direction} />
 
         <Panel
-          // Minimum allowable size of panel (numeric value between 1-100)
-          // minSize={10}
-          style={{ overflowY: 'auto' }}
+        // Minimum allowable size of panel (numeric value between 1-100)
+        // minSize={10}
+        //^ style={{ overflowY: 'auto' }}
         >
-          <div className='p-4' style={{ minWidth: 200 }}>
+          <div className='h-full overflow-auto p-4' style={{ minWidth: 200 }}>
             <h3 className='mb-1 whitespace-nowrap text-2xl font-black leading-none text-blue-500'>
               Section 2
             </h3>
@@ -104,8 +82,11 @@ export const ReactResizablePanelsDemo = ({ direction = 'horizontal' }: any) => {
 
         <CustomResizeHandle direction={direction} />
 
-        <Panel defaultSize={25} style={{ overflowY: 'auto' }}>
-          <div className='p-4' style={{ minWidth: 200 }}>
+        <Panel
+          defaultSize={25}
+          //^ style={{ overflowY: 'auto' }}
+        >
+          <div className='h-full overflow-auto p-4' style={{ minWidth: 200 }}>
             <h3 className='mb-1 whitespace-nowrap text-2xl font-black leading-none text-blue-500'>
               Section 3
             </h3>
@@ -127,44 +108,55 @@ const CustomResizeHandle = ({
 }: {
   direction?: 'horizontal' | 'vertical'
 }) => {
-  const base =
-    'relative rounded-full bg-neutral-300 active:bg-blue-400 text-neutral-300 active:text-blue-400'
-  const className =
-    direction === 'horizontal' ? `${base} my-4 w-1` : `${base} mx-4 h-1`
+  const horizontalHandle = (
+    <PanelResizeHandle className='group my-4 flex w-1 flex-col gap-2 text-neutral-300 active:text-blue-400'>
+      <div className='flex-1 rounded-full bg-neutral-300 group-active:bg-blue-400' />
+
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='32'
+        height='32'
+        fill='currentColor'
+        viewBox='0 0 16 16'
+        style={{
+          position: 'relative',
+          transform: 'translateX(-50%)',
+          left: 'calc(50% + 1px)'
+        }}
+      >
+        <path d='M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0' />
+      </svg>
+
+      <div className='flex-1 rounded-full bg-neutral-300 group-active:bg-blue-400' />
+    </PanelResizeHandle>
+  )
+
+  const verticalHandle = (
+    <PanelResizeHandle className='group mx-4 flex h-1 gap-1 text-neutral-300 active:text-blue-400'>
+      <div className='flex-1 rounded-full bg-neutral-300 group-active:bg-blue-400' />
+
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='32'
+        height='32'
+        fill='currentColor'
+        viewBox='0 0 16 16'
+        style={{
+          position: 'relative',
+          transform: 'translateY(-50%)',
+          top: 'calc(50% + 1px)'
+        }}
+      >
+        <path d='M2 8a1 1 0 1 1 0 2 1 1 0 0 1 0-2m0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2m3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2m0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2m3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2m0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2m3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2m0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2m3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2m0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2' />
+      </svg>
+
+      <div className='flex-1 rounded-full bg-neutral-300 group-active:bg-blue-400' />
+    </PanelResizeHandle>
+  )
 
   /* ======================
           return
   ====================== */
-  // This is still a hacky solution. What we actually need is: bar - icon - bar.
 
-  return (
-    <PanelResizeHandle className={className}>
-      {direction === 'horizontal' ? (
-        <div
-          className={`bg-white py-1`}
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(calc(-50% + 1px),-50%)'
-          }}
-        >
-          {gripVertical}
-        </div>
-      ) : (
-        <div
-          className={`bg-white px-1`}
-          style={{
-            position: 'absolute',
-            maxHeight: 10,
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%,calc(-50% + 1px))'
-          }}
-        >
-          <div style={{ marginTop: -10 }}>{gripHorizontal}</div>
-        </div>
-      )}
-    </PanelResizeHandle>
-  )
+  return direction === 'horizontal' ? horizontalHandle : verticalHandle
 }

@@ -192,9 +192,9 @@ interface Props {
 import { SquarePlugin } from './plugins/SquarePlugin'
 import { SquareNode } from './nodes/SquareNode'
 
-//# I want this to be a standalone component.
-//# However, I would like to make a version on top of it
-//# that implements basic label and validation features.
+//! The files in this component still has references to window and document
+//! that need to be refactored for Next.js. The 'use client' directive is
+//! insufficient because client components still run on the server!
 
 //# We could expose props for each particular toolbar plugin.
 //# This could just be an array of strings...
