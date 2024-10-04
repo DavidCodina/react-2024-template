@@ -1,5 +1,8 @@
 // import { lazy } from 'react'
-import { lazyWithPreload, sleep } from 'utils'
+import {
+  lazyWithPreload
+  //, sleep
+} from 'utils'
 
 ///////////////////////////////////////////////////////////////////////////
 //
