@@ -1,6 +1,6 @@
-import { useEffect } from 'react'
-
 import { useNavigate, useSearchParams } from 'react-router-dom'
+import { Pagination } from './Pagination'
+//import { SimplePagination as Pagination } from './SimplePagination'
 
 // const data: any = []
 // for (let i = 1; i <= 100; i++) {
@@ -20,8 +20,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 //   }
 // })
 
-const data = Array.from({ length: 50 }, (_, index) => `Name ${index + 1}`)
-
+const data = Array.from({ length: 100 }, (_, index) => `Item ${index + 1}`)
 const itemsPerPage = 10
 
 /* ========================================================================
@@ -50,6 +49,10 @@ export const PaginatedListDemo = () => {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
 
+  /* ======================
+        Dervived state
+  ====================== */
+
   const currentPage = (() => {
     const pageParam = searchParams.get('page')
     if (pageParam && typeof pageParam === 'string') {
@@ -58,14 +61,15 @@ export const PaginatedListDemo = () => {
         ? pageNumber
         : 1
     }
-
     return 1
   })()
 
-  // Dervived state
   const indexOfLastItem = currentPage * itemsPerPage
   const indexOfFirstItem = indexOfLastItem - itemsPerPage
   const dataSubset = data.slice(indexOfFirstItem, indexOfLastItem)
+
+  const itemCount = data.length
+  const pageCount = Math.ceil(itemCount / itemsPerPage)
 
   /* ======================
       handlePageChange()
@@ -85,26 +89,18 @@ export const PaginatedListDemo = () => {
   }
 
   /* ======================
-        useEffect()
-  ====================== */
-
-  useEffect(() => {
-    console.log('\nComponent mounted!')
-  }, [])
-
-  /* ======================
-         renderList()
+        renderList()
   ====================== */
 
   const renderList = () => {
     return (
-      <ul className='mx-auto mb-4 flex max-w-[600px] flex-col rounded pl-0 '>
+      <ul className='mx-auto mb-4 flex flex-col rounded pl-0 '>
         {dataSubset.map((item, index) => (
           <li
             key={index}
             className={`
-          relative block cursor-pointer border border-neutral-400 bg-white px-2 py-2 text-sm 
-          font-semibold shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] first:rounded-t-[inherit]
+          relative block cursor-pointer select-none border border-neutral-400 bg-white px-2 py-2 text-sm
+          font-black text-blue-500 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] first:rounded-t-[inherit]
           last:rounded-b-[inherit] [&:not(:first-child)]:border-t-0`}
           >
             {item}
@@ -115,38 +111,18 @@ export const PaginatedListDemo = () => {
   }
 
   /* ======================
-     renderPagination()
-  ====================== */
-
-  const renderPagination = () => {
-    return (
-      <div className='flex justify-end gap-2'>
-        {Array.from(
-          { length: Math.ceil(data.length / itemsPerPage) },
-          (_, index) => (
-            <button
-              key={index}
-              onClick={() => handlePageChange(index + 1)}
-              className={`rounded bg-green-500 px-4 py-2 font-bold text-white hover:bg-green-700 focus:outline-none 
-            ${currentPage === index + 1 ? 'bg-green-700' : ''}`}
-            >
-              {index + 1}
-            </button>
-          )
-        )}
-      </div>
-    )
-  }
-
-  /* ======================
           return
   ====================== */
 
   return (
-    <div className='mx-auto mb-6 max-w-[600px]'>
+    <div className='mx-auto mb-6 max-w-[500px]'>
       {renderList()}
 
-      {renderPagination()}
+      <Pagination
+        currentPage={currentPage}
+        handlePageChange={handlePageChange}
+        pageCount={pageCount}
+      />
     </div>
   )
 }

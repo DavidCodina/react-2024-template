@@ -1,8 +1,6 @@
-// @ts-nocheck
-
 import { useTitle } from 'hooks'
 import { HR, Page, PageContainer, Waves } from 'components'
-import { PaginatedListDemo } from './experiments/PaginatedListDemo'
+
 /* ========================================================================
                                 PageHome
 ======================================================================== */
@@ -34,7 +32,7 @@ const PageHome = () => {
               height: '100%'
             }}
           >
-            Home
+            Paginated List
           </span>
           <span
             className='bg-gradient-to-r from-violet-700 to-sky-400 bg-clip-text text-transparent'
@@ -42,13 +40,13 @@ const PageHome = () => {
               position: 'relative'
             }}
           >
-            Home
+            Paginated List
           </span>
         </h1>
 
         <HR style={{ marginBottom: 50 }} />
 
-        <PaginatedListDemo />
+        {/* <PaginatedListDemo /> */}
 
         {/* <SplitterDemo /> */}
 
