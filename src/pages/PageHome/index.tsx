@@ -1,12 +1,94 @@
 import { useTitle } from 'hooks'
+import { useRef, useEffect } from 'react'
 import { HR, Page, PageContainer, Waves } from 'components'
+
+// const obj = {
+//   message: 'Hello',
+//   func: () => {
+//     alert('Hello')
+//   }
+// }
+
+// const stringifyWithFunctions = (obj: any) => {
+//   return JSON.stringify(obj, (key, value) =>
+//     typeof value === 'function' ? value.toString() : value
+//   )
+// }
+
+// const parseWithFunctions = (str: any) => {
+//   return JSON.parse(str, (key, value) => {
+//     if (
+//       typeof value === 'string' &&
+//       (value.startsWith('function') || value.includes('=>'))
+//     ) {
+//       if (value.includes('=>')) {
+//         // Handle arrow functions
+//         return eval(value)
+//       } else {
+//         // Handle regular functions
+//         return new Function('return ' + value)()
+//       }
+//     }
+//     return value
+//   })
+// }
 
 /* ========================================================================
                                 PageHome
 ======================================================================== */
 
 const PageHome = () => {
+  const wcDivRef = useRef<any>(null)
   useTitle('Home')
+
+  /* ======================
+         useEffect
+  ====================== */
+  ///////////////////////////////////////////////////////////////////////////
+  //
+  // It turns out that passing functions as attributes to web components
+  // does not work very well. Well, it works great with common JSX synthetic
+  // event handlers, but as soon as you try to use a custom attribute, the
+  // behavior changes.
+  //
+  //   onclick={`(${() => {
+  //     alert(message) // ❌ Uncaught ReferenceError: message is not defined
+  //     handleClick()  // ❌ Uncaught ReferenceError: handleClick is not defined
+  //   }})()`}
+  //
+  // It will end up looking for message or handleClick in the global scope.
+  // The better solution would be to use a ref to assign event handlers to internal
+  // parts of the component, or possibly pass in slots with event handlers on them.
+  //
+  // The third options would be to send an object with the args and a stringified function
+  // to revive on the other side, but that feels super hacky.
+  //
+  /////////////////////////
+  //
+  // The bigger takeaway here is that any attribute that requires complex data needs to be
+  // serialized before passing it to the web component as an attribute. Then it needs to
+  // be deserialized within the web component. Otherwise, it will be turned into [object object],
+  // and at that point, it's not readable.
+  //
+  ///////////////////////////////////////////////////////////////////////////
+
+  useEffect(() => {
+    const wcDiv = wcDivRef.current
+
+    const handleDivClick = (e: any) => {
+      // e.stopPropagation()
+      console.dir(e.currentTarget)
+    }
+    const div = wcDiv.shadowRoot.querySelector('div')
+
+    if (div instanceof HTMLElement) {
+      div?.addEventListener('click', handleDivClick)
+    }
+
+    return () => {
+      div?.removeEventListener('click', handleDivClick)
+    }
+  }, [])
 
   /* ======================
           return
@@ -32,7 +114,7 @@ const PageHome = () => {
               height: '100%'
             }}
           >
-            Paginated List
+            Home
           </span>
           <span
             className='bg-gradient-to-r from-violet-700 to-sky-400 bg-clip-text text-transparent'
@@ -40,17 +122,29 @@ const PageHome = () => {
               position: 'relative'
             }}
           >
-            Paginated List
+            Home
           </span>
         </h1>
 
         <HR style={{ marginBottom: 50 }} />
 
-        {/* <PaginatedListDemo /> */}
-
-        {/* <SplitterDemo /> */}
-
-        {/* <PaginatedListDemo /> */}
+        <wc-div
+          ref={wcDivRef}
+          style={{ border: '1px solid var(--tw-blue-500)' }}
+          className='mx-auto max-w-[600px] cursor-pointer rounded-lg bg-white p-2 shadow-lg'
+          divClassName='font-black text-blue-500 text-3xl text-center'
+          // divStyle={JSON.stringify({ outline: '2px dashed green' })}
+          // divStyle='outline: 2px dashed orange;'
+          // divStyle={`
+          //   outline: 2px dashed orange;
+          //   background-color: var(--tw-neutral-100);
+          // `}
+          onClick={() => alert('Whuddup!')}
+          globalCSSPath={'/src/styles/main.css'}
+          data={JSON.stringify(['Muffy', 1, true])}
+        >
+          Read A Book
+        </wc-div>
 
         {/* <div
           style={{
