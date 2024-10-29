@@ -7,6 +7,10 @@ export * from './randomFail'
 export * from './searchParamsToObject'
 export * from './truthyArray'
 
+export * from './isPromise'
+export * from './isStringDict'
+export * from './isResponseObject'
+
 /* ======================
       isFileArray()
 ====================== */

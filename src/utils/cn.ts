@@ -10,6 +10,7 @@ Tailwind Conditional Classes
 // Josh Tried Coding: https://www.youtube.com/watch?v=iWNhFHZ129s
 // Medium:            https://medium.com/@nomanfareed681/simplify-your-tailwind-css-class-management-with-merge-and-clsx-42f1e2458fd8
 // ByteGrad:          https://www.youtube.com/watch?v=re2JFITR7TI
+// simonswiss:        https://www.youtube.com/watch?v=tfgLd5ZSNPc
 //
 // Usage example:
 //

@@ -42,7 +42,9 @@ declare global {
         divClassName?: string
         globalCSSPath?: string
         divStyle?: string
-        data?: any
+        // Here I'm explicitly creating a myData attribute, but it's
+        // actually easier to just use the actual HTML data-* attribute.
+        myData?: any
       }
     }
   }
@@ -53,8 +55,23 @@ declare global {
 ======================================================================== */
 
 class WCDiv extends HTMLElement {
+  // Pass properties and methods out.
+  api: Record<string, any> = {}
+
+  // Pass data in directly by mutating, or create a setter and getter.
+  state: Record<string, any> = {}
+
   constructor() {
     super()
+  }
+
+  handleMouseOver = () => {
+    console.log('Mouse Over!')
+    console.log('state:', this.state)
+  }
+
+  handleMouseOut = () => {
+    console.log('Mouse Out!')
   }
 
   ///////////////////////////////////////////////////////////////////////////
@@ -83,19 +100,36 @@ class WCDiv extends HTMLElement {
 
   connectedCallback() {
     convertReactClassName(this)
-    this.style.display = 'block' // Default is inline
+    // This will override CSS classes, but not the style prop.
+    this.style.display = 'block'
+    this.style.padding = ''
+    this.style.margin = ''
+
+    this.onmouseover = this.handleMouseOver
+    this.onmouseout = this.handleMouseOut
+
+    this.api = {
+      getInfo: () =>
+        console.log("I'm the API. Use me to expose methods and properties")
+    }
 
     /* ======================
-            data
+             myData
     ====================== */
 
-    let data: any = this.getAttribute('data') || ''
-    this.removeAttribute('data')
+    let myData: any = this.getAttribute('myData') || ''
+    this.removeAttribute('myData')
 
-    if (isStringifiedObject(data) || isStringifiedArray(data)) {
-      data = JSON.parse(data)
-      console.log('data;', data)
+    if (isStringifiedObject(myData) || isStringifiedArray(myData)) {
+      myData = JSON.parse(myData)
+      console.log('myData:', myData)
     }
+
+    // let dataArray: any = this.getAttribute('data-array') || ''
+    // if (isStringifiedArray(dataArray)) {
+    //   dataArray = JSON.parse(dataArray)
+    //   console.log('dataArray;', dataArray)
+    // }
 
     /* ======================
             shadow
@@ -151,7 +185,7 @@ class WCDiv extends HTMLElement {
       }
     }
 
-    if (div instanceof HTMLElement) {
+    if (div instanceof HTMLDivElement) {
       div.setAttribute('style', divStyle)
 
       if (typeof divClassName === 'string') {
@@ -162,3 +196,55 @@ class WCDiv extends HTMLElement {
 }
 
 customElements.define('wc-div', WCDiv)
+
+/* ======================
+         useEffect
+  ====================== */
+///////////////////////////////////////////////////////////////////////////
+//
+// It turns out that passing functions as attributes to web components
+// does not work very well. Well, it works great with common JSX synthetic
+// event handlers, but as soon as you try to use a custom attribute, the
+// behavior changes.
+//
+//   onclick={`(${() => {
+//     alert(message) // ❌ Uncaught ReferenceError: message is not defined
+//     handleClick()  // ❌ Uncaught ReferenceError: handleClick is not defined
+//   }})()`}
+//
+// It will end up looking for message or handleClick in the global scope.
+// The better solution would be to use a ref to assign event handlers to internal
+// parts of the component, or possibly pass in slots with event handlers on them.
+//
+// The third options would be to send an object with the args and a stringified function
+// to revive on the other side, but that feels super hacky.
+//
+/////////////////////////
+//
+// The bigger takeaway here is that any attribute that requires complex data needs to be
+// serialized before passing it to the web component as an attribute. Then it needs to
+// be deserialized within the web component. Otherwise, it will be turned into [object object],
+// and at that point, it's not readable.
+//
+// ///////////////////////////////////////////////////////////////////////////
+
+// useEffect(() => {
+//   const wcDiv = wcDivRef.current
+
+//   wcDiv.api?.getInfo?.()
+//   wcDiv.state.test = 'abc123'
+
+//   const handleDivClick = (e: any) => {
+//     // e.stopPropagation()
+//     console.dir(e.currentTarget)
+//   }
+//   const div = wcDiv.shadowRoot.querySelector('div')
+
+//   if (div instanceof HTMLElement) {
+//     div?.addEventListener('click', handleDivClick)
+//   }
+
+//   return () => {
+//     div?.removeEventListener('click', handleDivClick)
+//   }
+// }, [])

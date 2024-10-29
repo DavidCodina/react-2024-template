@@ -1,3 +1,4 @@
+import tailwindAnimate from 'tailwindcss-animate'
 import { extendTailwindMerge } from 'tailwind-merge'
 
 import { basePlugin } from './tw-plugins/basePlugin'
@@ -253,7 +254,8 @@ const config = {
     placeholderPlugin,
     offCanvasPlugin,
     paginationPlugin,
-    breadcrumbPlugin
+    breadcrumbPlugin,
+    tailwindAnimate
   ]
 }
 

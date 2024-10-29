@@ -25,6 +25,7 @@ export function lazyWithPreload<T extends ComponentType<any>>(
     // used for all subsequent renders, otherwise it can cause the
     // underlying component to be unmounted and remounted.
     const ComponentToRender = useRef(PreloadedComponent ?? ReactLazyComponent)
+
     return createElement(
       ComponentToRender.current,
       Object.assign(ref ? { ref } : {}, props) as any
