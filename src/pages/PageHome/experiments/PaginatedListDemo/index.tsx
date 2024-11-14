@@ -1,4 +1,6 @@
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useNavigate /* , useSearchParams */ } from 'react-router-dom'
+
+import { useState } from 'react'
 import { Pagination } from './Pagination'
 //import { SimplePagination as Pagination } from './SimplePagination'
 
@@ -40,6 +42,10 @@ const itemsPerPage = 10
 //
 // Theo:         https://www.youtube.com/watch?v=t3FUkq7yoCw
 //
+// Academind:    https://www.youtube.com/watch?v=hnmTiXEY4X8
+//
+// Jolly Coding: https://www.youtube.com/watch?v=mXziH-hQARs
+//
 // John Reilly:  https://blog.logrocket.com/use-state-url-persist-state-usesearchparams/
 //               https://johnnyreilly.com/react-usesearchparamsstate
 //
@@ -47,13 +53,13 @@ const itemsPerPage = 10
 
 export const PaginatedListDemo = () => {
   const navigate = useNavigate()
-  const [searchParams] = useSearchParams()
+  //^ const [searchParams] = useSearchParams()
 
-  /* ======================
-        Dervived state
-  ====================== */
-
-  const currentPage = (() => {
+  // I switched to a versio that just uses browser APIs instead of react-router-dom,
+  // but either approach works
+  //* Non react-router-dom implementation
+  const [currentPage, setCurrentPage] = useState(() => {
+    const searchParams = new URLSearchParams(window.location.search)
     const pageParam = searchParams.get('page')
     if (pageParam && typeof pageParam === 'string') {
       const pageNumber = parseInt(pageParam)
@@ -62,7 +68,22 @@ export const PaginatedListDemo = () => {
         : 1
     }
     return 1
-  })()
+  })
+
+  /* ======================
+        Dervived state
+  ====================== */
+
+  //^ const currentPage = (() => {
+  //^   const pageParam = searchParams.get('page')
+  //^   if (pageParam && typeof pageParam === 'string') {
+  //^     const pageNumber = parseInt(pageParam)
+  //^     return typeof pageNumber === 'number' && !isNaN(pageNumber)
+  //^       ? pageNumber
+  //^       : 1
+  //^   }
+  //^   return 1
+  //^ })()
 
   const indexOfLastItem = currentPage * itemsPerPage
   const indexOfFirstItem = indexOfLastItem - itemsPerPage
@@ -76,16 +97,37 @@ export const PaginatedListDemo = () => {
   ====================== */
 
   const handlePageChange = (page: number) => {
+    const searchParams = new URLSearchParams(window.location.search) //* Non react-router-dom implementation
     const params = new URLSearchParams(searchParams.toString()) // Get all params
     params.set('page', page.toString()) // Update page param
-    navigate(
-      `?${params.toString()}`,
-      // Optional: avoid adding to the history stack.
-      // This changes the behavior of the browser's back button,
-      // so we're not iterating through list sets, but instead go
-      // to the previous URL.
-      { replace: true }
-    )
+
+    //^ navigate(
+    //^   `?${params.toString()}`,
+    //^   // Optional: avoid adding to the history stack.
+    //^   // This changes the behavior of the browser's back button,
+    //^   // so we're not iterating through list sets, but instead go
+    //^   // to the previous URL.
+    //^   { replace: true }
+    //^ )
+
+    //* Non react-router-dom implementation
+    // ❌ window.history.pushState({}, '', `?${params.toString()}`)
+    window.history.replaceState({}, '', `?${params.toString()}`)
+    setCurrentPage(page)
+
+    // Doing everything without react-router-dom is a valid approach.
+    // However, it also means that react-router-dom is out of the loop,
+    // and is no longer aware of the exact location.
+    // This can be seen in AppContext where we track the currentPath
+    // using react-router-dom's const href = useHref(location).
+    // The useEffect will no longer fire with each change to the params.
+    // We can mitigate this by simply telling react-router-dom to update
+    // with navigate(0), but now we're kind of right back where we started.
+    // The point here is that if we're using react-router-dom, then we should
+    // probably stick with the more idiomatic (yellow) approach. On the other hand,
+    // we may be using nuqs to handle search params, and in that case, we might just
+    // want to add navigate(0) in our logic just to keep everything in sync.
+    navigate(0)
   }
 
   /* ======================

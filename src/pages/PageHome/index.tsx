@@ -1,5 +1,7 @@
+import { useEffect } from 'react'
 import { useTitle } from 'hooks'
 import { HR, Page, PageContainer, Waves } from 'components'
+import { PaginatedListDemo } from './experiments/PaginatedListDemo'
 
 //   message: 'Hello',
 //   func: () => {
@@ -38,6 +40,10 @@ import { HR, Page, PageContainer, Waves } from 'components'
 const PageHome = () => {
   useTitle('Home')
 
+  useEffect(() => {
+    console.log('\nThe page rendered...')
+  })
+
   /* ======================
           return
   ====================== */
@@ -75,6 +81,12 @@ const PageHome = () => {
         </h1>
 
         <HR style={{ marginBottom: 50 }} />
+
+        <PaginatedListDemo />
+        {/* 
+        <div className='text-center text-3xl font-bold text-blue-500'>
+          {import.meta.env.VITE_SECRET}
+        </div> */}
 
         {/* <div
           style={{
