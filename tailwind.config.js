@@ -47,7 +47,8 @@ import { tooltipPlugin } from './tw-plugins/tooltipPlugin'
 
 const config = {
   // important: true,
-  darkMode: 'class', // https://www.youtube.com/watch?v=oMOe_32M6ss
+  //^ The `selector` strategy replaced the `class` strategy in Tailwind CSS v3.4.1.
+  darkMode: 'selector', // ❌ 'class
   // corePlugins: { preflight: false },
 
   //! In v4, this may no longer be necessary.

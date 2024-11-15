@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { useTitle } from 'hooks'
-import { HR, Page, PageContainer, Waves } from 'components'
-import { PaginatedListDemo } from './experiments/PaginatedListDemo'
+import { Card, HR, Page, PageContainer, Waves } from 'components'
 
 //   message: 'Hello',
 //   func: () => {
@@ -82,7 +81,21 @@ const PageHome = () => {
 
         <HR style={{ marginBottom: 50 }} />
 
-        <PaginatedListDemo />
+        <Card className='mx-auto mb-6 max-w-[600px]'>
+          <Card.Heading
+            // className={`${mode !== 'dark' ? 'text-blue-500' : 'text-cyan-400'}`}
+            className='text-blue-500 dark:text-cyan-400'
+          >
+            This is the Title
+          </Card.Heading>
+          <Card.Body>
+            <Card.Text>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Similique debitis laborum eaque earum ullam quos quidem beatae...
+            </Card.Text>
+          </Card.Body>
+        </Card>
+
         {/* 
         <div className='text-center text-3xl font-bold text-blue-500'>
           {import.meta.env.VITE_SECRET}
