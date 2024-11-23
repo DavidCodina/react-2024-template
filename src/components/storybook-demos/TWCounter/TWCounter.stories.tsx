@@ -321,7 +321,7 @@ export const PinkButton: Story = {
     // https://storybook.js.org/docs/essentials/viewport
     // https://www.youtube.com/watch?v=uydF1ltw7-g
     viewport: {
-      defaultViewport: 'mobile1'
+      defaultViewport: 'iphone6' // 'ipad' | 'responsive'  | ...
     }
 
     //# https://storybook.js.org/docs/essentials/actions
@@ -437,12 +437,7 @@ OrangeCounter.args = {
 export const ClickTest: Story = {
   args: {},
 
-  //^ play isn't just about interaction testing.
-  //^ It's more broadly about getting values through interactions.
-  //# Michael Chan shows how to get a value through an interaction instead of props.
-  //# At 2:28 : https://www.youtube.com/watch?v=P0WHt_L0-2g
-  //# At 4:45 : https://www.youtube.com/watch?v=uH9_dfc-6Kc
-  //# See also: https://www.youtube.com/watch?v=dcuzwCHI940
+  // ✅ Marius Espejo : https://www.youtube.com/watch?v=Lg-hT0O2F7E
   play: async ({ /* args, */ canvasElement, step }) => {
     // The step function can be used to create labeled groups of interactions.
 
