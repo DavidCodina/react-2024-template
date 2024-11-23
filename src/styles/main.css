@@ -11,21 +11,18 @@
  syntax for importing tailwind directives intermixed
  with other .css files.  */
 
-@import 'tailwindcss/base';
+/* @import 'tailwindcss/base';
 @import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss/utilities'; */
 
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
-
-/* @import '../layout/NavBar/navbar.css'; */
+@tailwind utilities;
 
 /* @import '../layout/NavBar/navbar.css'; */
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
-
 /* ======================
       Reset Styles
 ====================== */

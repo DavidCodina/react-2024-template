@@ -1,6 +1,10 @@
 import { useEffect } from 'react'
 import { useTitle } from 'hooks'
-import { Card, HR, Page, PageContainer, Waves } from 'components'
+import { HR, Page, PageContainer, Waves } from 'components'
+import { SBDemos } from 'components/storybook-demos'
+
+// import { Square } from 'dc-react-ts-test-library'
+import 'dc-react-ts-test-library/dist/main.css'
 
 //   message: 'Hello',
 //   func: () => {
@@ -81,7 +85,12 @@ const PageHome = () => {
 
         <HR style={{ marginBottom: 50 }} />
 
-        <Card className='mx-auto mb-6 max-w-[600px]'>
+        <SBDemos />
+        {/* <div className='square' />
+
+        <Square /> */}
+
+        {/* <Card className='mx-auto mb-6 max-w-[600px]'>
           <Card.Heading
             // className={`${mode !== 'dark' ? 'text-blue-500' : 'text-cyan-400'}`}
             className='text-blue-500 dark:text-cyan-400'
@@ -94,7 +103,7 @@ const PageHome = () => {
               Similique debitis laborum eaque earum ullam quos quidem beatae...
             </Card.Text>
           </Card.Body>
-        </Card>
+        </Card> */}
 
         {/* 
         <div className='text-center text-3xl font-bold text-blue-500'>

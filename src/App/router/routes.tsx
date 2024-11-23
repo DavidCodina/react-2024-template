@@ -212,7 +212,7 @@ export const routes = createRoutesFromElements(
         element={
           <ConditionalRoute isAllowed={true} redirectPath='/'>
             <div className='w-screen'>
-              <h1 className=' py-6 text-center font-black text-blue-500'>
+              <h1 className='py-6 text-center font-black text-blue-500'>
                 Conditional Routing Example
               </h1>
               <p className='text-center'>
@@ -232,7 +232,7 @@ export const routes = createRoutesFromElements(
         element={
           condition ? (
             <div className='w-screen'>
-              <h1 className=' py-6 text-center font-black text-blue-500'>
+              <h1 className='py-6 text-center font-black text-blue-500'>
                 Inlined Conditional Routing Example
               </h1>
             </div>
@@ -282,9 +282,7 @@ export const routes = createRoutesFromElements(
       path='/outlier'
       element={
         <div className='w-screen'>
-          <h1 className=' py-6 text-center font-black text-blue-500'>
-            Outlier
-          </h1>
+          <h1 className='py-6 text-center font-black text-blue-500'>Outlier</h1>
           <p className='text-center'>
             This content exists outside of <code>MainLayout</code>.
           </p>
