@@ -84,7 +84,7 @@
     "@typescript-eslint",
     "vitest",
     // https://react.dev/learn/react-compiler#installing-eslint-plugin-react-compiler
-    "eslint-plugin-react-compiler",
+    //` "eslint-plugin-react-compiler",
     "jsx-a11y",
     "testing-library",
     "jest-dom",
@@ -95,7 +95,7 @@
   ],
 
   "rules": {
-    "react-compiler/react-compiler": "warn",
+    //` "react-compiler/react-compiler": "warn",
     "tsdoc/syntax": "warn",
     ///////////////////////////////////////////////////////////////////////////
     //
