@@ -68,6 +68,5 @@
     "tw-plugins/**/*",
     ".storybook/**/*",
     "vite.config.ts"
-  ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  ]
 }
