@@ -11,7 +11,7 @@ export const FormPluginDemo = () => {
 
   const _inputGroupForm = (
     <form
-      className='mx-auto mb-6 max-w-[800px] rounded-lg border border-gray-400 bg-[#fafafa]  p-4 shadow-lg'
+      className='mx-auto mb-6 max-w-[800px] rounded-lg border border-gray-400 bg-[#fafafa] p-4 shadow-lg'
       noValidate
       onSubmit={(e) => {
         e.preventDefault()
@@ -419,7 +419,7 @@ export const FormPluginDemo = () => {
 
   const _floatingForm = (
     <form
-      className='mx-auto mb-6 max-w-[800px] rounded-lg border border-gray-400 bg-[#fafafa]  p-4 shadow-lg'
+      className='mx-auto mb-6 max-w-[800px] rounded-lg border border-gray-400 bg-[#fafafa] p-4 shadow-lg'
       noValidate
       onSubmit={(e) => {
         e.preventDefault()
@@ -499,7 +499,7 @@ export const FormPluginDemo = () => {
 
   const validationForm = (
     <form
-      className='mx-auto mb-6 max-w-[800px] rounded-lg border border-gray-400 bg-[#fafafa]  p-4 shadow-lg'
+      className='mx-auto mb-6 max-w-[800px] rounded-lg border border-gray-400 bg-[#fafafa] p-4 shadow-lg'
       noValidate
       onSubmit={(e) => {
         e.preventDefault()
@@ -578,7 +578,7 @@ export const FormPluginDemo = () => {
       </div>
       <div className='mb-4'>
         <select
-          className='form-select is-invalid'
+          className='is-invalid form-select'
           // multiple
           // size={2}
           // disabled
@@ -596,7 +596,7 @@ export const FormPluginDemo = () => {
       <div className='mb-4'>
         <div className='form-check'>
           <input
-            className='form-check-input is-invalid'
+            className='is-invalid form-check-input'
             id='check1'
             name='check1'
             type='checkbox'
@@ -612,7 +612,7 @@ export const FormPluginDemo = () => {
 
         <div className='form-check'>
           <input
-            className='form-check-input is-valid'
+            className='is-valid form-check-input'
             id='check2'
             name='check2'
             type='checkbox'
@@ -632,7 +632,7 @@ export const FormPluginDemo = () => {
       <div className='mb-4'>
         <div className='form-check'>
           <input
-            className='form-check-input is-invalid'
+            className='is-invalid form-check-input'
             id='radio1'
             name='radio-group-1'
             type='radio'
@@ -674,7 +674,7 @@ export const FormPluginDemo = () => {
 
         <div className='form-check form-check-reverse form-switch'>
           <input
-            className='form-check-input is-invalid'
+            className='is-invalid form-check-input'
             type='checkbox'
             role='switch'
             id='flexSwitchCheckChecked'
@@ -720,7 +720,7 @@ export const FormPluginDemo = () => {
         <input
           // disabled
           type='range'
-          className='form-range is-valid' // ???
+          className='is-valid form-range' // ???
           id='range1'
           name='range1'
         />

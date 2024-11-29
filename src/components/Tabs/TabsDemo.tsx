@@ -55,15 +55,14 @@ export const TabsDemo = () => {
 
   return (
     <Fragment>
-      <div className='mb-6  flex justify-center gap-2'>
+      <div className='mb-6 flex justify-center gap-2'>
         <button
           className='btn-blue flex min-w-[100px] items-center justify-center gap-2'
           onClick={() => setValue('tab1')}
         >
           Tab 1{' '}
           <div
-            className={`
-            h-4 w-4 rounded-full border border-white bg-[#66FF66] ${
+            className={`h-4 w-4 rounded-full border border-white bg-[#66FF66] ${
               value === 'tab1' ? 'opacity-100' : 'opacity-50'
             }`}
           />
@@ -74,8 +73,7 @@ export const TabsDemo = () => {
         >
           Tab 2{' '}
           <div
-            className={`
-            h-4 w-4 rounded-full border border-white bg-[#66FF66] ${
+            className={`h-4 w-4 rounded-full border border-white bg-[#66FF66] ${
               value === 'tab2' ? 'opacity-100' : 'opacity-50'
             }`}
           />

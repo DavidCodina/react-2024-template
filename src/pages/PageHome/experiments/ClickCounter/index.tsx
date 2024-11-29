@@ -81,11 +81,7 @@ export const ClickCounter = ({
   return (
     <button
       {...otherProps}
-      className={`
-        mx-auto mb-6 block min-w-[100px] 
-        rounded-lg border border-blue-700 bg-blue-500 
-        px-2 py-1 text-sm font-bold  text-white
-        ${className ? ` ${className}` : ''}`}
+      className={`mx-auto mb-6 block min-w-[100px] rounded-lg border border-blue-700 bg-blue-500 px-2 py-1 text-sm font-bold text-white ${className ? ` ${className}` : ''}`}
       onClick={() => {
         setInternalValue((v) => v + 1)
       }}

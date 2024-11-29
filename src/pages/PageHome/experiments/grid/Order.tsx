@@ -16,15 +16,7 @@ export const Order = () => {
 
   return (
     <section
-      className={`
-      mx-auto
-      grid
-      w-[50%]
-      auto-rows-[minmax(100px,auto)]
-      grid-cols-4
-      gap-4
-      outline-dashed
-      `}
+      className={`mx-auto grid w-[50%] auto-rows-[minmax(100px,auto)] grid-cols-4 gap-4 outline-dashed`}
     >
       <div className='order-2 flex items-center justify-center rounded border border-[#409] bg-white font-black text-[#409] shadow'>
         1

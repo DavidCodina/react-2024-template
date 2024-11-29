@@ -107,10 +107,7 @@ export const Slider = ({
           return (
             <button
               key={index}
-              className={`
-              cursor-pointer rounded bg-white hover:opacity-100
-              ${isCurrent ? 'opacity-100' : 'opacity-60'}
-              `}
+              className={`cursor-pointer rounded bg-white hover:opacity-100 ${isCurrent ? 'opacity-100' : 'opacity-60'} `}
               style={{
                 height: 12,
                 width: 24

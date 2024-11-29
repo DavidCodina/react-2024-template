@@ -53,10 +53,7 @@ export const ResizableInput = () => {
           autoComplete='off'
           autoCorrect='off'
           spellCheck={false}
-          className={`
-            rounded border border-neutral-300 px-2 py-1 text-xs outline-none
-            focus:border-[#86b7fe] focus:shadow-[0_0_0_0.25rem_rgba(13,110,253,0.25)]
-          `}
+          className={`rounded border border-neutral-300 px-2 py-1 text-xs outline-none focus:border-[#86b7fe] focus:shadow-[0_0_0_0.25rem_rgba(13,110,253,0.25)]`}
           style={{
             minWidth: '100px',
             width: typeof width === 'number' ? width : defaultWidth,

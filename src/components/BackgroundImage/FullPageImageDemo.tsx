@@ -17,16 +17,10 @@ export const FullPageImageDemo = () => {
         src={person}
         // relative is used here to help it have the correct stacking order.
         // shrink-0 may not be needed, but doesn't hurt.
-        className={`
-        group
-        relative
-        flex h-[100vh] w-full shrink-0
-        items-center justify-center overflow-auto bg-white/0 p-4 bg-blend-overlay
-        transition-colors duration-700 hover:bg-white/60
-        `}
+        className={`group relative flex h-[100vh] w-full shrink-0 items-center justify-center overflow-auto bg-white/0 p-4 bg-blend-overlay transition-colors duration-700 hover:bg-white/60`}
       >
         {/* Fun hover effect, but obviously don't do this in production because some users will be on mobile. */}
-        <div className='w-full max-w-2xl  rounded-xl border border-neutral-500 bg-white p-4 text-base opacity-0 shadow-xl transition-opacity duration-1000 group-hover:opacity-100'>
+        <div className='w-full max-w-2xl rounded-xl border border-neutral-500 bg-white p-4 text-base opacity-0 shadow-xl transition-opacity duration-1000 group-hover:opacity-100'>
           <p>This is a simple demo of a full page background image.</p>
 
           <pre className='mx-auto w-11/12 rounded-xl border border-neutral-500 bg-neutral-50 text-xs font-normal leading-normal shadow'>

@@ -22,7 +22,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
         {payload[0] && (
           <p
-            className='m-0  leading-none text-violet-600'
+            className='m-0 leading-none text-violet-600'
             style={{ fontSize: 12 }}
           >
             <span className='font-bold'>Revenue:</span>

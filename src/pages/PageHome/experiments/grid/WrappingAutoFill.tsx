@@ -10,15 +10,7 @@ export const WrappingAutoFill = () => {
 
   return (
     <section
-      className={`
-      mx-auto
-      grid
-      max-w-4xl
-      auto-rows-[minmax(100px,auto)]
-      grid-cols-[repeat(auto-fill,minmax(150px,1fr))] 
-      gap-4
-      outline-dashed outline-purple-800
-      `}
+      className={`mx-auto grid max-w-4xl auto-rows-[minmax(100px,auto)] grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-4 outline-dashed outline-purple-800`}
     >
       {[...Array(9)].map((_, index) => (
         <div className='flex items-center justify-center rounded border border-[#409] bg-white font-black text-[#409] shadow'>

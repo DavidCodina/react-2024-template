@@ -19,29 +19,21 @@ export const FR_Units = () => {
 
   return (
     <section
-      className={`
-      mx-auto
-      grid
-      w-[90%]
-      auto-rows-[minmax(100px,auto)]
-      grid-cols-[1fr_2fr]
-      gap-4
-      outline-dashed
-      `}
+      className={`mx-auto grid w-[90%] auto-rows-[minmax(100px,auto)] grid-cols-[1fr_2fr] gap-4 outline-dashed`}
     >
       <div className='flex items-center justify-center rounded border border-[#409] bg-white font-black text-[#409] shadow'>
         1
       </div>
 
-      <div className=' flex items-center justify-center rounded border border-[#409] bg-white font-black text-[#409] shadow'>
+      <div className='flex items-center justify-center rounded border border-[#409] bg-white font-black text-[#409] shadow'>
         2
       </div>
 
-      <div className=' flex items-center justify-center rounded border border-[#409] bg-white font-black text-[#409] shadow'>
+      <div className='flex items-center justify-center rounded border border-[#409] bg-white font-black text-[#409] shadow'>
         3
       </div>
 
-      <div className=' flex items-center justify-center rounded border border-[#409] bg-white font-black text-[#409] shadow'>
+      <div className='flex items-center justify-center rounded border border-[#409] bg-white font-black text-[#409] shadow'>
         4
       </div>
 

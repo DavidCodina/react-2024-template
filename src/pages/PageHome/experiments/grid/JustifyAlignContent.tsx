@@ -117,18 +117,7 @@ export const JustifyAlignContent = () => {
 
   return (
     <section
-      className={`
-      mx-auto
-      grid
-      aspect-video
-      w-[90%]   
-      auto-rows-[minmax(100px,auto)]
-      grid-cols-[repeat(3,minmax(0px,100px))]
-      content-center
-      justify-center
-      gap-4
-      outline-dashed
-      `}
+      className={`mx-auto grid aspect-video w-[90%] auto-rows-[minmax(100px,auto)] grid-cols-[repeat(3,minmax(0px,100px))] content-center justify-center gap-4 outline-dashed`}
       // style={{ direction: 'rtl' }}
     >
       <div className='flex items-center justify-center rounded border border-[#409] bg-white font-black text-[#409] shadow'>

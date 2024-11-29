@@ -35,7 +35,7 @@ export const AnchorDemo = () => {
 
         <Anchor
           // disabled
-          className='btn-green btn-sm  mx-auto'
+          className='btn-green btn-sm mx-auto'
           underline='never'
           href='https://www.google.com'
           style={{ display: 'table' }}

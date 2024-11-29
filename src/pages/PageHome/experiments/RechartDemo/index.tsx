@@ -30,11 +30,7 @@ export const RechartDemo = () => {
   return (
     <>
       <div
-        className={`
-        grid w-full auto-rows-[minmax(100px,auto)]
-        grid-cols-[repeat(auto-fill,minmax(400px,1fr))]
-        gap-8 
-      `}
+        className={`grid w-full auto-rows-[minmax(100px,auto)] grid-cols-[repeat(auto-fill,minmax(400px,1fr))] gap-8`}
       >
         <GridItem>
           <AreaChart />
@@ -91,9 +87,7 @@ export const RechartDemo = () => {
 const GridItem = ({ children }: { children: ReactNode }) => {
   return (
     <div
-      className={`flex aspect-video flex-col items-center justify-center rounded-xl border-[1.5px] border-[#409] bg-[rgb(247,252,255)] 
-      shadow-[0_35px_60px_-15px_rgba(0,0,0,0.2)]
-      `}
+      className={`flex aspect-video flex-col items-center justify-center rounded-xl border-[1.5px] border-[#409] bg-[rgb(247,252,255)] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.2)]`}
     >
       {children}
     </div>

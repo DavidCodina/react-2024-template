@@ -21,16 +21,7 @@ export const Span = () => {
 
   return (
     <section
-      className={`
-      mx-auto
-      grid
-      max-w-4xl
-      auto-rows-[minmax(100px,auto)]
-      grid-cols-3
-      gap-4
-      outline-dashed 
-      outline-purple-800
-      `}
+      className={`mx-auto grid max-w-4xl auto-rows-[minmax(100px,auto)] grid-cols-3 gap-4 outline-dashed outline-purple-800`}
     >
       <div className='flex items-center justify-center rounded border border-[#409] bg-white font-black text-[#409] shadow'>
         1

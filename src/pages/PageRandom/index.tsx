@@ -39,8 +39,7 @@ const PageRandom = () => {
 
   return (
     <div
-      className={`
-      mx-auto flex w-full flex-1 flex-wrap`}
+      className={`mx-auto flex w-full flex-1 flex-wrap`}
       style={{
         backgroundImage: mode === 'dark' ? darkBackgroundImage : backgroundImage
       }}

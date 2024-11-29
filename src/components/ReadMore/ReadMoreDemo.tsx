@@ -28,12 +28,7 @@ export const ReadMoreDemo = () => {
       )}
 
       <ReadMore
-        className={`
-        mb-6 rounded-lg border border-indigo-800 bg-white p-2 shadow-lg
-        [--read-more-button-bg:white] 
-        [--read-more-button-color:theme(colors.indigo.700)]
-        [--read-more-button-font-size:inherit]
-        `}
+        className={`mb-6 rounded-lg border border-indigo-800 bg-white p-2 shadow-lg [--read-more-button-bg:white] [--read-more-button-color:theme(colors.indigo.700)] [--read-more-button-font-size:inherit]`}
         // Setting lineHeight and/or fontSize here is inherited by the 'Read More' button.
         // style={{ lineHeight: 2, fontSize: 20 }}
         maxLines={2}

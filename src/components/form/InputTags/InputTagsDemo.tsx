@@ -131,9 +131,7 @@ export const InputTagsDemo = () => {
       </form>
 
       <div
-        className={`
-        mx-auto max-w-[800px] rounded-lg border border-neutral-400 
-        bg-white p-4 text-center shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]`}
+        className={`mx-auto max-w-[800px] rounded-lg border border-neutral-400 bg-white p-4 text-center shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]`}
       >
         {JSON.stringify(tags, null, 2)}
       </div>

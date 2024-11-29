@@ -88,17 +88,13 @@ export const TailwindAnimateDemo = () => {
           style={{ zIndex: 9999 }}
         >
           <div
-            className={`
-          absolute
-          rounded-lg border border-neutral-400 bg-white p-4 shadow
-          ${
-            open === true
-              ? 'animate-in zoom-in duration-150'
-              : open === false
-                ? ' animate-out zoom-out fill-mode-forwards duration-150'
-                : ' animate-out zoom-out fill-mode-forwards duration-0'
-          }
-        `}
+            className={`absolute rounded-lg border border-neutral-400 bg-white p-4 shadow ${
+              open === true
+                ? 'duration-150 animate-in zoom-in'
+                : open === false
+                  ? 'duration-150 animate-out zoom-out fill-mode-forwards'
+                  : 'duration-0 animate-out zoom-out fill-mode-forwards'
+            } `}
           >
             <p>
               {/* Gotcha: inline elements won't always animage, but if you change them 
@@ -203,12 +199,7 @@ export const TailwindAnimateDemo = () => {
           // property was the only thing that worked for me
           //
 
-          className={`
-            hover:animate-out hover:spin-out-[-90deg] hover:fill-mode-forwards mx-auto 
-            mb-8 flex h-16 w-16 cursor-pointer items-center justify-center rounded-lg border border-blue-900 bg-blue-500
-            text-sm font-bold text-white shadow [animation-duration:500ms] hover:[animation-duration:500ms]
-          `}
-          // eslint-disable-next-line
+          className={`mx-auto mb-8 flex h-16 w-16 cursor-pointer items-center justify-center rounded-lg border border-blue-900 bg-blue-500 text-sm font-bold text-white shadow [animation-duration:500ms] hover:animate-out hover:spin-out-[-90deg] hover:fill-mode-forwards hover:[animation-duration:500ms]`}
           onPointerOut={(e) => {
             if (e.currentTarget.classList.contains('hover:animate-out')) {
               // Remove

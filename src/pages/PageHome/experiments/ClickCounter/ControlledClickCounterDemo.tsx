@@ -32,11 +32,7 @@ export const ControlledClickCounterDemo = () => {
 
   const controls = (
     <div
-      className={`
-        mx-auto mb-6 inline-flex justify-center gap-2 rounded-lg 
-        border border-blue-600 bg-blue-500 font-bold text-white
-        [&>button]:min-w-[100px] [&>button]:px-2 [&>button]:py-1
-      `}
+      className={`mx-auto mb-6 inline-flex justify-center gap-2 rounded-lg border border-blue-600 bg-blue-500 font-bold text-white [&>button]:min-w-[100px] [&>button]:px-2 [&>button]:py-1`}
       style={{ display: 'table' }}
     >
       <button onClick={() => setExternalValue((v) => v - 1)}>decrement</button>

@@ -85,7 +85,7 @@ export const CreatePostForm = () => {
   const renderCreatePostForm = () => {
     return (
       <Form
-        className=' mx-auto mb-4 max-w-xl rounded-lg border border-neutral-400 p-4'
+        className='mx-auto mb-4 max-w-xl rounded-lg border border-neutral-400 p-4'
         style={{ backgroundColor: '#fafafa' }}
         method='post'
         action='/posts/create'

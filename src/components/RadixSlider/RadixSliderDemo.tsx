@@ -95,11 +95,7 @@ export const RadixSliderDemo = () => {
         formGroupStyle={{}}
         defaultValue={[0, 100]}
         // disabled={true}
-        className={`
-        [--radix-slider-height:15px]
-        [--radix-slider-range-bg:--tw-indigo-700]
-        [--radix-slider-track-bg:--tw-sky-300]
-        `}
+        className={`[--radix-slider-height:15px] [--radix-slider-range-bg:--tw-indigo-700] [--radix-slider-track-bg:--tw-sky-300]`}
         min={0}
         max={100}
         step={1}

@@ -44,17 +44,7 @@ export const AlignItemsSelf = () => {
 
   return (
     <section
-      className={`
-      mx-auto
-      grid
-      aspect-[3/1]
-      w-[50%]
-      auto-rows-[minmax(100px,auto)]
-      grid-cols-3
-      items-start
-      gap-4
-      outline-dashed
-      `}
+      className={`mx-auto grid aspect-[3/1] w-[50%] auto-rows-[minmax(100px,auto)] grid-cols-3 items-start gap-4 outline-dashed`}
     >
       <div className='flex items-center justify-center rounded border border-[#409] bg-white font-black text-[#409] shadow'>
         1

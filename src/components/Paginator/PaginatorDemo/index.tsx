@@ -249,20 +249,7 @@ export const PaginatorDemo = () => {
           {data.filter(filterItemsByIndexRange).map((item) => {
             return (
               <li // eslint-disable-line
-                className={`
-                list-group-item
-                flex
-                items-center
-                justify-between
-                border-[#409]
-                px-4
-                py-2
-                text-sm
-                font-bold
-                text-[#00b5e2]
-                hover:bg-[rgba(0,181,226,0.75)]
-                hover:text-white
-                `}
+                className={`list-group-item flex items-center justify-between border-[#409] px-4 py-2 text-sm font-bold text-[#00b5e2] hover:bg-[rgba(0,181,226,0.75)] hover:text-white`}
                 key={item.id}
                 onClick={() => {
                   //# navigate(`/item/${item.id}`)

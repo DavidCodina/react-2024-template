@@ -89,7 +89,7 @@ export const BackgroundImageDemo = () => {
           }}
         />
 
-        <div className='relative h-full w-full overflow-auto  p-4'>
+        <div className='relative h-full w-full overflow-auto p-4'>
           <p>
             What if we want to apply a filter like{' '}
             <code className='text-pink-500'>blur()</code> or{' '}

@@ -336,7 +336,6 @@ export const InputTags = forwardRef<HTMLInputElement, Props>(
           setInternalTags(initialValue)
         }
       }
-      // eslint-disable-next-line
     }, [initialValue, max])
 
     /* ======================

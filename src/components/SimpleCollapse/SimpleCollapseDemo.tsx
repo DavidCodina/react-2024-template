@@ -33,17 +33,7 @@ export const SimpleCollapseDemo = () => {
           // The Collapse removes overlow:hidden after transitioning.
           // However, if you want to ensure that the shadow is shown even when
           // transitioning, then you can add margins.
-          className={`
-            mx-1
-            mb-1
-            rounded-lg 
-            border bg-white
-            p-2 px-4
-            dark:border-[var(--tw-dark-primary-color)]
-            dark:bg-[var(--tw-dark-bg-color)]
-            ${show ? 'py-4' : 'py-1'}
-            shadow-[0px_2px_3px_rgba(0,_0,_0,_0.15)]
-          `}
+          className={`mx-1 mb-1 rounded-lg border bg-white p-2 px-4 dark:border-[var(--tw-dark-primary-color)] dark:bg-[var(--tw-dark-bg-color)] ${show ? 'py-4' : 'py-1'} shadow-[0px_2px_3px_rgba(0,_0,_0,_0.15)]`}
           style={{
             transition: 'padding 500ms linear'
           }}

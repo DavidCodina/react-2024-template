@@ -32,7 +32,7 @@ export const SimplePagination = ({
 
           handlePageChange(1)
         }}
-        className={`${base} bg-neutral-300 hover:bg-neutral-400 ${currentPage === 1 ? ' opacity-75' : ''}`}
+        className={`${base} bg-neutral-300 hover:bg-neutral-400 ${currentPage === 1 ? 'opacity-75' : ''}`}
       >
         «
       </button>
@@ -46,7 +46,7 @@ export const SimplePagination = ({
 
           handlePageChange(currentPage - 1)
         }}
-        className={`${base} bg-neutral-300 hover:bg-neutral-400 ${currentPage === 1 ? ' opacity-75' : ''}`}
+        className={`${base} bg-neutral-300 hover:bg-neutral-400 ${currentPage === 1 ? 'opacity-75' : ''}`}
       >
         ‹
       </button>
@@ -76,7 +76,7 @@ export const SimplePagination = ({
           }
           handlePageChange(currentPage + 1)
         }}
-        className={`${base} bg-neutral-300 hover:bg-neutral-400 ${currentPage === pageCount ? ' opacity-75' : ''}`}
+        className={`${base} bg-neutral-300 hover:bg-neutral-400 ${currentPage === pageCount ? 'opacity-75' : ''}`}
       >
         ›
       </button>
@@ -89,7 +89,7 @@ export const SimplePagination = ({
           }
           handlePageChange(pageCount)
         }}
-        className={`${base} bg-neutral-300 hover:bg-neutral-400 ${currentPage === pageCount ? ' opacity-75' : ''}`}
+        className={`${base} bg-neutral-300 hover:bg-neutral-400 ${currentPage === pageCount ? 'opacity-75' : ''}`}
       >
         »
       </button>

@@ -13,13 +13,7 @@ export const RadixScrollAreaDemo = () => {
     <RadixScrollArea
       vertical={true}
       horizontal={true}
-      className={`
-      mx-auto h-[200px] max-w-[200px] overflow-hidden rounded-2xl border border-gray-400 shadow-xl [--radix-scrollarea-scrollbar-hover-bg:theme(colors.blue.500/20%)]
-      [--radix-scrollarea-scrollbar-padding:theme(spacing[0.5])]
-      [--radix-scrollarea-scrollbar-size:theme(spacing.2)]
-    [--radix-scrollarea-thumb-bg:theme(colors.blue.500)]
-    [background-color:floralWhite]
-      `}
+      className={`mx-auto h-[200px] max-w-[200px] overflow-hidden rounded-2xl border border-gray-400 shadow-xl [--radix-scrollarea-scrollbar-hover-bg:theme(colors.blue.500/20%)] [--radix-scrollarea-scrollbar-padding:theme(spacing[0.5])] [--radix-scrollarea-scrollbar-size:theme(spacing.2)] [--radix-scrollarea-thumb-bg:theme(colors.blue.500)] [background-color:floralWhite]`}
     >
       <section className={`p-4`}>
         <div className='text-base font-black leading-none text-blue-500'>

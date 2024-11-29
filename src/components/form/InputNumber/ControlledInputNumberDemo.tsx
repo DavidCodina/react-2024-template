@@ -249,7 +249,7 @@ export const ControlledInputNumberDemo = () => {
         </button>
 
         <button
-          className='btn-blue '
+          className='btn-blue'
           onClick={() => {
             setValues((prev) => {
               const value =

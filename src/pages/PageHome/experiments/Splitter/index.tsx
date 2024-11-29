@@ -97,10 +97,7 @@ export const Splitter = ({
         tabIndex={0}
       >
         <div
-          className={`
-            h-full w-full rounded-full
-            ${isMouseDown ? 'bg-blue-400' : 'bg-neutral-300'}
-            transition-transform duration-200${xMixinCondition ? ` ${xMixin}` : ''}`}
+          className={`h-full w-full rounded-full ${isMouseDown ? 'bg-blue-400' : 'bg-neutral-300'} transition-transform duration-200${xMixinCondition ? ` ${xMixin}` : ''}`}
         />
       </div>
     )
@@ -116,9 +113,7 @@ export const Splitter = ({
     }
     return (
       <div
-        className={`
-      mx-auto max-w-[600px] rounded-lg border border-neutral-400 
-      bg-white p-4 text-center shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]`}
+        className={`mx-auto max-w-[600px] rounded-lg border border-neutral-400 bg-white p-4 text-center shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]`}
       >
         {JSON.stringify(
           sizes.map((size) => Math.round(size)),

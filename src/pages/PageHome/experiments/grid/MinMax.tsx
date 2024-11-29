@@ -33,17 +33,7 @@ export const MinMax = () => {
 
   return (
     <section
-      className={`
-      mx-auto
-      grid
-      aspect-square
-      w-[50%]
-      grid-cols-[repeat(2,minmax(0,25%))]
-      content-center
-      justify-center
-      gap-4
-      outline-dashed
-      `}
+      className={`mx-auto grid aspect-square w-[50%] grid-cols-[repeat(2,minmax(0,25%))] content-center justify-center gap-4 outline-dashed`}
     >
       <div className='relative pt-[100%]'>
         <div className='absolute inset-0 flex items-center justify-center rounded border border-[#409] bg-white font-black text-[#409] shadow'>

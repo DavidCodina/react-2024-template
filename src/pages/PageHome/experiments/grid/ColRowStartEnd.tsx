@@ -20,16 +20,7 @@ export const ColRowStartEnd = () => {
 
   return (
     <section
-      className={`
-      mx-auto
-      grid
-      aspect-square
-      w-[90%]
-      grid-cols-4
-      grid-rows-4
-      gap-4
-      outline-dashed
-      `}
+      className={`mx-auto grid aspect-square w-[90%] grid-cols-4 grid-rows-4 gap-4 outline-dashed`}
     >
       <div className='col-start-2 col-end-3 row-start-2 row-end-3 flex items-center justify-center rounded border border-[#409] bg-white font-black text-[#409] shadow'>
         1

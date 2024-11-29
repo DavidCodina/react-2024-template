@@ -143,7 +143,7 @@ export default function ColorPicker({
       <div className='rte-color-picker-basic-color'>
         {basicColors.map((basicColor) => (
           <button
-            className={basicColor === selfColor.hex ? ' active' : ''}
+            className={basicColor === selfColor.hex ? 'active' : ''}
             key={basicColor}
             style={{ backgroundColor: basicColor }}
             onClick={() => {

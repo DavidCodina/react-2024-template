@@ -25,10 +25,7 @@ export const SmartDivDemo = () => {
   return (
     <SmartDiv
       id='smart-div'
-      className={`
-        mb-6 rounded-lg border border-neutral-400
-        bg-white p-4 text-center font-bold shadow
-      `}
+      className={`mb-6 rounded-lg border border-neutral-400 bg-white p-4 text-center font-bold shadow`}
       ref={smartDivRef}
     >
       I'm smart!!!

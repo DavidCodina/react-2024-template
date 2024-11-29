@@ -7,11 +7,7 @@ const CardPlaceholder = ({
 }: any) => {
   return (
     <section
-      className={`
-      border border-neutral-400
-      bg-white dark:border-[--tw-dark-primary-color] dark:bg-[--tw-dark-bg-color]
-      ${className ? ` ${className}` : ''}
-      `}
+      className={`border border-neutral-400 bg-white dark:border-[--tw-dark-primary-color] dark:bg-[--tw-dark-bg-color] ${className ? ` ${className}` : ''} `}
       style={{
         borderRadius: 10,
         padding: 15,
@@ -146,7 +142,7 @@ export const PlaceholderDemo = () => {
           left: -50,
           transform: 'rotate(-20deg)'
         }}
-        className='absolute w-full [--placeholder-opacity:0.25] '
+        className='absolute w-full [--placeholder-opacity:0.25]'
       />
 
       <CardPlaceholder
@@ -176,11 +172,7 @@ export const PlaceholderDemo = () => {
         // Demure:  https://manuarora.in/boxshadows
 
         // [--placeholder-bg:#333]
-        className={`
-        relative shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] 
-        [--placeholder-min-height:15px]
-        [--placeholder-opacity:0.25]
-        `}
+        className={`relative shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] [--placeholder-min-height:15px] [--placeholder-opacity:0.25]`}
       />
     </div>
   )

@@ -5,10 +5,7 @@ export const wrapNode = (child: ReactNode, key: number) => {
   return (
     <div
       key={key}
-      className={`
-        inline-block overflow-hidden rounded-lg border-2 border-dashed
-        border-sky-400 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]
-      `}
+      className={`inline-block overflow-hidden rounded-lg border-2 border-dashed border-sky-400 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]`}
     >
       {child}
     </div>

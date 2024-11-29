@@ -23,9 +23,7 @@ export const InputComponent = forwardRef<InputRef, InputProps>((props, ref) => {
     <input
       {...otherProps}
       ref={ref}
-      className={`
-        ${className}
-        ${inputClassName ? ` ${inputClassName}` : ''}`}
+      className={` ${className} ${inputClassName ? ` ${inputClassName}` : ''}`}
       style={inputStyle}
     />
   )

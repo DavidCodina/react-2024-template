@@ -93,10 +93,7 @@ export const RadixAccordionDemo = () => {
         // [--radix-accordion-trigger-color:theme(colors.sky.400)]
         // [--radix-accordion-trigger-hover-bg:theme(colors.violet.200)]
         // [--radix-accordion-trigger-hover-color:#409]
-        className={`
-        mx-auto max-w-[800px]
-        shadow-lg
-        `}
+        className={`mx-auto max-w-[800px] shadow-lg`}
         ref={accordionRef}
         style={{}}
         type='single'

@@ -43,7 +43,6 @@ export const buttonPlugin = plugin(function (pluginApi) {
         return buttonClasses
       }
 
-
       const hoverBackgroundColor = lightenDarkenColor(
         theme(`colors.${colorKey}.500`),
         20

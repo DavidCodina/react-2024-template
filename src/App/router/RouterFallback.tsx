@@ -33,8 +33,7 @@ export const RouterFallback = () => {
 
   return (
     <div
-      className={`
-      mx-auto flex w-full flex-1 flex-wrap`}
+      className={`mx-auto flex w-full flex-1 flex-wrap`}
       style={{ backgroundImage }}
     >
       <div className='relative mx-auto w-full flex-1 p-6 2xl:container'>

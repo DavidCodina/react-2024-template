@@ -39,11 +39,7 @@ export const LightenDarkenDemo = () => {
   return (
     <div
       // active:bg-green-600 is too dark!!!
-      className={`
-        mx-auto mb-6 block h-32 w-32 
-        rounded-lg border border-[rgba(0,0,0,0.25)]
-        bg-green-500 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]
-      `}
+      className={`mx-auto mb-6 block h-32 w-32 rounded-lg border border-[rgba(0,0,0,0.25)] bg-green-500 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]`}
       onPointerDown={handleDarken}
       onPointerUp={handleUndarken}
       onKeyDown={(e) => {
