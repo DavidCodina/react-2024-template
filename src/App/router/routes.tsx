@@ -1,4 +1,5 @@
 // Third-party imports
+// import { lazy } from 'react'
 import { createRoutesFromElements, Route, Navigate } from 'react-router'
 
 // Custom imports
@@ -7,12 +8,14 @@ import { RootLayout, MainLayout } from 'layouts'
 import { ConditionalRoute } from './ConditionalRoute'
 // import { PrivateRoutes } from './PrivateRoutes'
 import PageHome from 'pages/PageHome' // Should NOT be lazy loaded.
-//# import PageEditor from 'pages/PageEditor'
 
 import {
   LazyPageRandom as PageRandom,
   loader as randomLoader
 } from 'pages/PageRandom'
+
+// const PageRandom = lazy(() => import('pages/PageRandom'))
+// import { loader as randomLoader } from 'pages/PageRandom'
 
 import {
   LazyPageAbout as PageAbout,
@@ -21,11 +24,6 @@ import {
 
 import { AboutDavid } from 'pages/PageAbout/AboutDavid'
 import { AboutHolly } from 'pages/PageAbout/AboutHolly'
-
-//# import {
-//#   LazyPageHooks as PageHooks,
-//#   loader as pageHooksLoader
-//# } from 'pages/PageHooks'
 
 import {
   LazyPageProductList as PageProductList,
@@ -118,7 +116,7 @@ export const routes = createRoutesFromElements(
         ///////////////////////////////////////////////////////////////////////////
         //
         // This will avoid the Suspense fallback blink, and block the page transition
-        // until  the data (which in this case is the component itself) is loaded.
+        // until the data (which in this case is the component itself) is loaded.
         //
         // By default, loaders wait for the data before transitioning,
         // We can use the loader to import the component.
@@ -135,6 +133,20 @@ export const routes = createRoutesFromElements(
         //     // return null or get additional data and return that.
         //     return null
         //   }
+        //
+        //^ That said, I no longer see any SuspenseFallback blink when first navigating to
+        //^ pages that are lazy loaded:
+        //^ const PageRandom = lazy(() => import('pages/PageRandom'))
+        //^ It could be that react-router v7 solved that problem.
+        //^
+        //^ It could also be that react v18 concurrent mode fixed it.
+        //^ In Concurrent Mode, Suspense can delay the rendering of sibling components until the suspended component is ready,
+        //^ which helps in avoiding the brief blink of the fallback content.
+        //^ https://github.com/reactwg/react-18/discussions/7
+        //^
+        //^ Essentially this means that there's no need for react-lazy-with-preload.
+        //^ Thus, for any production projects, DO NOT add that kind of logic, unless
+        //^ there is a noticeable need for it.
         //
         ///////////////////////////////////////////////////////////////////////////
         loader={randomLoader}
