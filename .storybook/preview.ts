@@ -1,11 +1,31 @@
-import type { Preview } from '@storybook/react'
+import { Preview } from '@storybook/react'
+import { withThemeByClassName } from '@storybook/addon-themes'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import '../src/styles/main.css'
 
-// .storybook/preview.ts
-
-//# https://github.com/storybookjs/storybook/issues/25067
 const preview: Preview = {
+  decorators: [
+    withThemeByClassName({
+      themes: {
+        light: '',
+        ///////////////////////////////////////////////////////////////////////////
+        //
+        // This is for switching the Tailwind theme to 'dark' for components.
+        // It is NOT for switching the Storybook theme.
+        // https://github.com/storybookjs/storybook/issues/26242
+        // The themes addon is concerned with theming your components, not theming the docs.
+        //
+        //   "[Themeing Storybook itself...] is more of a feature request than a bug, but I agree
+        //   that this is annoying shortcoming of Storybook today and something the themes addon could fix.
+        //   We are discussing possible theming improvements as part of 8.x, so this could be a good area to invest in."
+        //
+        ///////////////////////////////////////////////////////////////////////////
+        dark: 'dark'
+      },
+      defaultTheme: 'light'
+    })
+  ],
+
   parameters: {
     controls: {
       matchers: {

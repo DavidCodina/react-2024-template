@@ -1,10 +1,10 @@
 import { useEffect } from 'react'
 import { useTitle } from 'hooks'
 import { HR, Page, PageContainer, Waves } from 'components'
-import { SBDemos } from 'components/storybook-demos'
+// import { SBDemos } from 'components/storybook-demos'
 
-// import { Square } from 'dc-react-ts-test-library'
-import 'dc-react-ts-test-library/dist/main.css'
+//#  import { Square } from 'dc-react-ts-test-library'
+//# import 'dc-react-ts-test-library/dist/main.css'
 
 //   message: 'Hello',
 //   func: () => {
@@ -84,26 +84,6 @@ const PageHome = () => {
         </h1>
 
         <HR style={{ marginBottom: 50 }} />
-
-        <SBDemos />
-        {/* <div className='square' />
-
-        <Square /> */}
-
-        {/* <Card className='mx-auto mb-6 max-w-[600px]'>
-          <Card.Heading
-            // className={`${mode !== 'dark' ? 'text-blue-500' : 'text-cyan-400'}`}
-            className='text-blue-500 dark:text-cyan-400'
-          >
-            This is the Title
-          </Card.Heading>
-          <Card.Body>
-            <Card.Text>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Similique debitis laborum eaque earum ullam quos quidem beatae...
-            </Card.Text>
-          </Card.Body>
-        </Card> */}
 
         {/* 
         <div className='text-center text-3xl font-bold text-blue-500'>

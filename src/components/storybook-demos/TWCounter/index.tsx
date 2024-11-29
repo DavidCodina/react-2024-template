@@ -54,7 +54,7 @@ export const TWCounter = ({
     <button
       {...otherProps}
       className={twMerge(
-        'mx-auto block min-w-[150px] rounded-lg border border-blue-700 bg-blue-500 px-2 py-1 font-bold text-white',
+        `mx-auto block min-w-[150px] rounded-lg border border-blue-700 bg-blue-500 px-2 py-1 font-bold text-white dark:border-2 dark:border-red-500`,
         className
       )}
       onClick={(_e) => setCount((v) => v + 1)}

@@ -34,7 +34,8 @@ const config: StorybookConfig = {
     '@storybook/addon-links',
     '@storybook/addon-essentials', //  '@storybook/addon-actions'
     '@chromatic-com/storybook',
-    '@storybook/addon-interactions'
+    '@storybook/addon-interactions',
+    '@storybook/addon-themes'
   ],
   framework: {
     name: '@storybook/react-vite',

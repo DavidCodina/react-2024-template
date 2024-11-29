@@ -35,6 +35,8 @@ const itemsPerPage = 10
 // ByteGrad:     https://www.youtube.com/watch?v=ukpgxEemXsk&t=2s
 // CoderOne:     https://www.youtube.com/watch?v=h9hYnDe8DtI&t=145s
 //
+// Cosden Solutons: https://www.youtube.com/watch?v=gMoni2Hm92U // ❗️Not watched yet.
+//
 // Sam Selikoff: https://www.youtube.com/watch?v=sFTGEs2WXQ4
 //
 //               Discusses the 'browser back button bug', and how to avoid 'two sources of truth'.
@@ -136,14 +138,11 @@ export const PaginatedListDemo = () => {
 
   const renderList = () => {
     return (
-      <ul className='mx-auto mb-4 flex flex-col rounded pl-0 '>
+      <ul className='mx-auto mb-4 flex flex-col rounded pl-0'>
         {dataSubset.map((item, index) => (
           <li
             key={index}
-            className={`
-          relative block cursor-pointer select-none border border-neutral-400 bg-white px-2 py-2 text-sm
-          font-black text-blue-500 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] first:rounded-t-[inherit]
-          last:rounded-b-[inherit] [&:not(:first-child)]:border-t-0`}
+            className={`relative block cursor-pointer select-none border border-neutral-400 bg-white px-2 py-2 text-sm font-black text-blue-500 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] first:rounded-t-[inherit] last:rounded-b-[inherit] [&:not(:first-child)]:border-t-0`}
           >
             {item}
           </li>
