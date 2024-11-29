@@ -1,7 +1,7 @@
 import {
   // LoaderFunction,
   LoaderFunctionArgs
-} from 'react-router-dom'
+} from 'react-router'
 import { getPost } from './getPost'
 import { lazyWithPreload } from 'utils'
 

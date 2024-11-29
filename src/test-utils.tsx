@@ -1,4 +1,4 @@
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router'
 import { render } from '@testing-library/react'
 import { AppProvider } from 'contexts'
 
@@ -24,7 +24,7 @@ import { AppProvider } from 'contexts'
 // One solution is to build a helper function that will
 // streamline the necessary setup for a mini router.
 //
-//   import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom'
+//   import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router'
 //   import { RootLayout, MainLayout } from 'layouts'
 //   type RoutePropsWithoutPath = Omit<RouteProps, 'path'>
 //

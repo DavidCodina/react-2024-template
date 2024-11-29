@@ -1,5 +1,5 @@
 // Third-party imports
-import { createRoutesFromElements, Route, Navigate } from 'react-router-dom'
+import { createRoutesFromElements, Route, Navigate } from 'react-router'
 
 // Custom imports
 
@@ -62,6 +62,7 @@ import { createPostAction } from 'pages/posts/PageCreatePost/createPost'
 
 import PageNotFound from 'pages/PageNotFound' // Should NOT be lazy loaded.
 import PageUnauthorized from 'pages/PageUnauthorized'
+import { RouterFallback } from './RouterFallback'
 
 import {
   LazyPageErrorDemo as PageErrorDemo,
@@ -75,7 +76,7 @@ const condition = true // Used for isAllowed={true} (conditional routes demo) be
 ======================================================================== */
 
 export const routes = createRoutesFromElements(
-  <Route element={<RootLayout />}>
+  <Route element={<RootLayout />} hydrateFallbackElement={<RouterFallback />}>
     <Route element={<MainLayout />}>
       {/* Unfortunately, there doesn't seem to be any way to abstract the actual routes.
       You could try abstracting all the routes into a seperate component, then doing this:

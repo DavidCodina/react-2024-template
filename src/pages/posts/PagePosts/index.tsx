@@ -9,7 +9,7 @@ import {
   useRevalidator
   // See Academind video at 35:30 : https://www.youtube.com/watch?v=L2kzUg6IzxM
   // Await
-} from 'react-router-dom'
+} from 'react-router'
 import { toast } from 'react-toastify'
 
 // Custom imports

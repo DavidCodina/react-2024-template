@@ -1,5 +1,5 @@
 // Third-Party imports
-import { Navigate, Outlet, useLocation } from 'react-router-dom'
+import { Navigate, Outlet, useLocation } from 'react-router'
 
 // Custom imports
 //# import { useAuthContext } from 'contexts'

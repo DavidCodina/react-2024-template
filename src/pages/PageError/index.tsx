@@ -1,6 +1,6 @@
 // Third-party imports
 import { useEffect, useState } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faHome } from '@fortawesome/free-solid-svg-icons'
 

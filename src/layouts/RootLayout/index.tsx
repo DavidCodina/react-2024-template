@@ -1,5 +1,5 @@
 // Third-party imports
-import { Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router'
 
 // Custom imports
 import { Providers } from 'contexts'

@@ -1,5 +1,5 @@
 // Third-party imports
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 
 // Custom imports
 import { useTitle } from 'hooks'

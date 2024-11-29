@@ -1,9 +1,8 @@
 // Third-party imports
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router'
 
 // Custom imports
 import { routes } from './routes'
-export * from './RouterFallback'
 
 /* ========================================================================
                                 router                 

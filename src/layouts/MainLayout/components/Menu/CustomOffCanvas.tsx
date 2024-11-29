@@ -1,5 +1,5 @@
 import { Dispatch, Fragment, SetStateAction } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faHome,
@@ -206,6 +206,19 @@ export const CustomOffCanvas = ({
         >
           <FontAwesomeIcon icon={faInfo} style={{ marginRight: 10 }} />
           About
+        </NavLink>
+
+        <NavLink
+          className={({ isActive }) => getClassName(isActive)}
+          to={
+            location.pathname === '/random' && location.search
+              ? `/random${location.search}`
+              : '/random'
+          }
+          onClick={handleClose}
+        >
+          <FontAwesomeIcon icon={faInfo} style={{ marginRight: 10 }} />
+          Random
         </NavLink>
       </Fragment>
     )

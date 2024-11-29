@@ -4,7 +4,7 @@ import {
   useNavigate,
   useLocation,
   useSearchParams
-} from 'react-router-dom'
+} from 'react-router'
 
 // Custom imports
 import { useThemeContext } from 'contexts'

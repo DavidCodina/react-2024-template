@@ -1,5 +1,5 @@
 // Third-party imports
-import { Link, Outlet, useLocation } from 'react-router-dom'
+import { Link, Outlet, useLocation } from 'react-router'
 import styled, { css } from 'styled-components'
 
 import { useThemeContext } from 'contexts'

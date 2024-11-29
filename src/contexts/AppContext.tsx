@@ -8,7 +8,7 @@ import {
   useEffect,
   useRef
 } from 'react'
-import { useLocation, useHref } from 'react-router-dom'
+import { useLocation, useHref } from 'react-router'
 
 import {
   createContext,

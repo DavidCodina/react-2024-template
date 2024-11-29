@@ -1,4 +1,4 @@
-import { lazyWithPreload /* , sleep  */ } from 'utils'
+import { lazyWithPreload, sleep } from 'utils'
 export const LazyPageRandom = lazyWithPreload(() => import('./'))
 
 export const loader = async () => {
@@ -27,7 +27,7 @@ export const loader = async () => {
   ///////////////////////////////////////////////////////////////////////////
 
   // Get any API data you need here, or use a separate loader...
-  // await sleep(3000) // Simulate slow request
+  await sleep(3000) // Simulate slow request
 
   await LazyPageRandom.preload().then((component: any) => {
     // console.log('The component has been loaded:', component)

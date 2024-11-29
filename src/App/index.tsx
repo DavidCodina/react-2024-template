@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
-import { RouterProvider } from 'react-router-dom'
-import { router, RouterFallback } from './router'
+import { RouterProvider /*, RouterProviderProps */ } from 'react-router'
+import { router } from './router'
 
 ///////////////////////////////////////////////////////////////////////////
 //
@@ -58,7 +58,11 @@ import type {} from 'styled-components/cssprop'
 function App() {
   return (
     <Fragment>
-      <RouterProvider router={router} fallbackElement={<RouterFallback />} />
+      <RouterProvider
+        router={router}
+        // https://reactrouter.com/upgrading/v6#v7_partialhydration
+        // fallbackElement={<RouterFallback />}
+      />
     </Fragment>
   )
 }

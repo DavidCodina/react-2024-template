@@ -1,6 +1,6 @@
 // Third-party imports
 import { useEffect, useState } from 'react'
-import { useLoaderData, useParams, useRevalidator } from 'react-router-dom'
+import { useLoaderData, useParams, useRevalidator } from 'react-router'
 import { toast } from 'react-toastify'
 
 // Custom imports

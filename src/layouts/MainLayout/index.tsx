@@ -1,6 +1,6 @@
 // Third-party imports
 import { Fragment, Suspense } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router'
 import { ErrorBoundary } from 'react-error-boundary'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -64,8 +64,8 @@ export const MainLayout = () => {
         >
           <FixedGlobalSpinner delay={750} />
 
-          {/* The GlobalSpinner will run while any react-router-dom data loader is loading. 
-          In the absence of GlobalSpinner, the default behavior of react-router-dom is to
+          {/* The GlobalSpinner will run while any react-router data loader is loading. 
+          In the absence of GlobalSpinner, the default behavior of react-router is to
           delay/await page switching until the loader function completes. The GlobalSpinner completely
           replaces all content. It's like a separate Page. For this reason, I generally prefer using
           a FixedGlobalSpinner. This component sits on top of the content and works in conjunction with

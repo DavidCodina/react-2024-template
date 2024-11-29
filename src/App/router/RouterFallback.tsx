@@ -5,12 +5,18 @@ const backgroundImage = `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org
 ======================================================================== */
 ///////////////////////////////////////////////////////////////////////////
 //
-// This component is passed to RouterProvider:
+// This component was passed to RouterProvider in v6:
 //
 //   <RouterProvider router={router} fallbackElement={<RouterFallback />} />
 //
+// In v7 we now do this in routes.tsx::
+//
+//   <Route element={<RootLayout />} hydrateFallbackElement={<RouterFallback />}>
+//
 // It would be invoked in cases where the user manually refreshed the browser,
-// and the page that they refreshed had a loader.
+// and the page that they refreshed had a loader. In cases where the user
+// simply navigates to the a page with a loader, there is logic setup up that
+// will instead trigger <FixedGobalSpinner />.
 //
 ///////////////////////////////////////////////////////////////////////////
 

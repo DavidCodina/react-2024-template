@@ -4,7 +4,7 @@ import {
   createRoutesFromElements,
   Route,
   RouteProps
-} from 'react-router-dom'
+} from 'react-router'
 import { RootLayout, MainLayout } from 'layouts'
 
 type RoutePropsWithoutPath = Omit<RouteProps, 'path'>

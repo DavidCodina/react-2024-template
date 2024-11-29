@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router'
 import { Paginator } from '../index'
 import { debounce } from './lodash.debounce'
 

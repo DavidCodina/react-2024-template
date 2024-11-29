@@ -1,5 +1,5 @@
 // Third-party imports
-import { ActionFunctionArgs } from 'react-router-dom'
+import { ActionFunctionArgs } from 'react-router'
 import axios from 'axios'
 
 ///////////////////////////////////////////////////////////////////////////

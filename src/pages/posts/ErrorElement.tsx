@@ -1,5 +1,5 @@
 // Third-party imports
-import { useRouteError, useNavigate, useLocation } from 'react-router-dom'
+import { useRouteError, useNavigate, useLocation } from 'react-router'
 
 // Custom imports
 import { Alert, Button } from 'components'

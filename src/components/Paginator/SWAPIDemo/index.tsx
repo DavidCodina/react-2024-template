@@ -1,5 +1,5 @@
 import { Fragment, useState, useEffect, useCallback, useRef } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router'
 import { toast } from 'react-toastify'
 
 import { Paginator } from '../index'

@@ -1,4 +1,4 @@
-import { useNavigate /* , useSearchParams */ } from 'react-router-dom'
+import { useNavigate /* , useSearchParams */ } from 'react-router'
 
 import { useState } from 'react'
 import { Pagination } from './Pagination'
@@ -57,9 +57,9 @@ export const PaginatedListDemo = () => {
   const navigate = useNavigate()
   //^ const [searchParams] = useSearchParams()
 
-  // I switched to a versio that just uses browser APIs instead of react-router-dom,
+  // I switched to a versio that just uses browser APIs instead of react-router,
   // but either approach works
-  //* Non react-router-dom implementation
+  //* Non react-router implementation
   const [currentPage, setCurrentPage] = useState(() => {
     const searchParams = new URLSearchParams(window.location.search)
     const pageParam = searchParams.get('page')
@@ -99,7 +99,7 @@ export const PaginatedListDemo = () => {
   ====================== */
 
   const handlePageChange = (page: number) => {
-    const searchParams = new URLSearchParams(window.location.search) //* Non react-router-dom implementation
+    const searchParams = new URLSearchParams(window.location.search) //* Non react-router implementation
     const params = new URLSearchParams(searchParams.toString()) // Get all params
     params.set('page', page.toString()) // Update page param
 
@@ -112,20 +112,20 @@ export const PaginatedListDemo = () => {
     //^   { replace: true }
     //^ )
 
-    //* Non react-router-dom implementation
+    //* Non react-router implementation
     // ❌ window.history.pushState({}, '', `?${params.toString()}`)
     window.history.replaceState({}, '', `?${params.toString()}`)
     setCurrentPage(page)
 
-    // Doing everything without react-router-dom is a valid approach.
-    // However, it also means that react-router-dom is out of the loop,
+    // Doing everything without react-router is a valid approach.
+    // However, it also means that react-router is out of the loop,
     // and is no longer aware of the exact location.
     // This can be seen in AppContext where we track the currentPath
-    // using react-router-dom's const href = useHref(location).
+    // using react-router's const href = useHref(location).
     // The useEffect will no longer fire with each change to the params.
-    // We can mitigate this by simply telling react-router-dom to update
+    // We can mitigate this by simply telling react-router to update
     // with navigate(0), but now we're kind of right back where we started.
-    // The point here is that if we're using react-router-dom, then we should
+    // The point here is that if we're using react-router, then we should
     // probably stick with the more idiomatic (yellow) approach. On the other hand,
     // we may be using nuqs to handle search params, and in that case, we might just
     // want to add navigate(0) in our logic just to keep everything in sync.

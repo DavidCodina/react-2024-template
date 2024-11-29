@@ -6,7 +6,7 @@ import {
   useActionData,
   useNavigate,
   useNavigation
-} from 'react-router-dom'
+} from 'react-router'
 import { toast } from 'react-toastify'
 
 // Custom imports

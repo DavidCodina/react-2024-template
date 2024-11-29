@@ -1,6 +1,6 @@
 // Third-party imports...
 import { useEffect } from 'react'
-import { useLoaderData } from 'react-router-dom'
+import { useLoaderData } from 'react-router'
 
 // Custom imports
 import { useTitle } from 'hooks'

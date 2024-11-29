@@ -5,7 +5,7 @@ import {
   createRoutesFromElements,
   Route,
   createMemoryRouter
-} from 'react-router-dom'
+} from 'react-router'
 
 // Custom imports
 import { RootLayout, MainLayout } from 'layouts'
@@ -200,7 +200,7 @@ describe('PagePosts', () => {
 
     // Gotcha! This won't work:
     // const title = await screen.getAllByText('Posts')
-    // The reason is most likely because react-router-dom initializes
+    // The reason is most likely because react-router initializes
     // with some amount of state changes, which ultimately create an
     // asynchronous gap. This is not necessarily related to the loader,
     // or lazy loading.
