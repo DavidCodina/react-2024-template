@@ -10,6 +10,8 @@ import './index.css'
 // conjuction with clamp: font-size: clamp(1rem, 10cqi, 3rem);
 //
 // ✅ Kevin Powell (older) : https://www.youtube.com/watch?v=3_-Je5XpbqY
+//
+// Kevin Powell            : https://www.youtube.com/watch?v=DHj7JhH8ins
 // Kevin Powell            : https://www.youtube.com/watch?v=Zddz_R1RnfM
 // Josh Comeau             : https://www.joshwcomeau.com/css/container-queries-introduction/
 export const ContainerQueriesDemo = () => {

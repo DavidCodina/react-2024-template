@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useTitle } from 'hooks'
 import { HR, Page, PageContainer, Waves } from 'components'
-// import { SBDemos } from 'components/storybook-demos'
+import { TransitionFromNone } from './experiments/TransitionFromNone'
 
 //#  import { Square } from 'dc-react-ts-test-library'
 //# import 'dc-react-ts-test-library/dist/main.css'
@@ -84,6 +84,8 @@ const PageHome = () => {
         </h1>
 
         <HR style={{ marginBottom: 50 }} />
+
+        <TransitionFromNone />
 
         {/* 
         <div className='text-center text-3xl font-bold text-blue-500'>

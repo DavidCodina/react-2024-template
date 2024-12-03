@@ -24,6 +24,8 @@ import { tablePlugin } from './tw-plugins/tablePlugin'
 import { tabsPlugin } from './tw-plugins/tabsPlugin'
 import { tooltipPlugin } from './tw-plugins/tooltipPlugin'
 
+import { startingStylePlugin } from './tw-plugins/startingStylePlugin'
+
 ///////////////////////////////////////////////////////////////////////////
 //
 // Gotcha: Switching to a .ts extension breaks the above import annotation.
@@ -257,6 +259,7 @@ const config = {
     offCanvasPlugin,
     paginationPlugin,
     breadcrumbPlugin,
+    startingStylePlugin,
     tailwindAnimate
   ]
 }
